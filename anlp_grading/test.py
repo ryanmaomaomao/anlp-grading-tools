@@ -11,16 +11,16 @@ scores_folder = Path('/mnt/scores')
 execute_cli_timeout(
     'cd /mnt/code && '
     'python3 /mnt/code/classifier.py '
-    '--option=pretrain '
-    '--epochs=10 '
-    '--lr=1e-3 '
+    '--option pretrain '
+    '--epochs 10 '
+    '--lr 1e-3 '
     '--use_gpu '
-    '--batch_size=64 '
-    '--train=/mnt/data/sst-train.txt '
-    '--dev=/mnt/data/sst-dev.txt '
-    '--test=/mnt/data/sst-test.txt '
-    '--dev_out=/mnt/scores/sst-dev-output.txt '
-    '--test_out=/mnt/scores/sst-test-output.txt ',
+    '--batch_size 64 '
+    '--train /mnt/data/sst-train.txt '
+    '--dev /mnt/data/sst-dev.txt '
+    '--test /mnt/data/sst-test.txt '
+    '--dev_out /mnt/scores/sst-dev-output.txt '
+    '--test_out /mnt/scores/sst-test-output.txt ',
     timeout=4500
 )
 
@@ -33,16 +33,16 @@ print('sst pretrain test accuracy ', sst_pretrain_test_acc)
 execute_cli_timeout(
     'cd /mnt/code && '
     'python3 /mnt/code/classifier.py '
-    '--option=finetune '
-    '--epochs=10 '
-    '--lr=1e-5 '
+    '--option finetune '
+    '--epochs 10 '
+    '--lr 1e-5 '
     '--use_gpu '
-    '--batch_size=64 '
-    '--train=/mnt/data/sst-train.txt '
-    '--dev=/mnt/data/sst-dev.txt '
-    '--test=/mnt/data/sst-test.txt '
-    '--dev_out=/mnt/scores/sst-dev-output.txt '
-    '--test_out=/mnt/scores/sst-test-output.txt ',
+    '--batch_size 64 '
+    '--train /mnt/data/sst-train.txt '
+    '--dev /mnt/data/sst-dev.txt '
+    '--test /mnt/data/sst-test.txt '
+    '--dev_out /mnt/scores/sst-dev-output.txt '
+    '--test_out /mnt/scores/sst-test-output.txt ',
     timeout=8100
 )
 
@@ -57,16 +57,16 @@ print('sst finetune test accuracy ', sst_finetune_test_acc)
 execute_cli_timeout(
     'cd /mnt/code && '
     'python3 /mnt/code/classifier.py '
-    '--option=finetune '
-    '--epochs=10 '
-    '--lr=1e-5 '
+    '--option finetune '
+    '--epochs 10 '
+    '--lr 1e-5 '
     '--use_gpu '
-    '--batch_size=8 '
-    '--train=/mnt/data/cfimdb-train.txt '
-    '--dev=/mnt/data/cfimdb-dev.txt '
-    '--test=/mnt/data/cfimdb-test.txt '
-    '--dev=/mnt/data/cfimdb-dev.txt  '
-    '--dev_out=/mnt/scores/cfimdb-dev-output.txt ',
+    '--batch_size 8 '
+    '--train /mnt/data/cfimdb-train.txt '
+    '--dev /mnt/data/cfimdb-dev.txt '
+    '--test /mnt/data/cfimdb-test.txt '
+    '--dev /mnt/data/cfimdb-dev.txt  '
+    '--dev_out /mnt/scores/cfimdb-dev-output.txt ',
     timeout=12600
 )
 
